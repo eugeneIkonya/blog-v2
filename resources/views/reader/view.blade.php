@@ -1,6 +1,13 @@
 @extends('layouts.reader')
-@section('description', '')
-@section('title', 'ByteInsider:{{$single->title}}')
+@php
+    $keywords = implode(',',json_decode($single->keywords));
+@endphp
+@section('description')
+{{$keywords}}
+@endsection
+@section('title') 
+'ByteInsider:' {{$single->title}}
+@endsection
 @section('content')
     <main class="row content__page">
         <article class="column large-full entry format-standard">
@@ -19,83 +26,87 @@
                     <li class="date">{{ $single->created_at->format('F d, Y') }}</li>
                     <li class="cat-links">
                         @foreach ($single->categories as $tag)
-                            <a href="{{route('reader.category',['id'=>$tag->id])}}">{{ $tag->name }}</a>
+                            <a href="{{ route('reader.category', ['id' => $tag->id]) }}">{{ $tag->name }}</a>
                         @endforeach
                     </li>
                 </ul>
             </div>
             {{-- entry content  --}}
             @if ($single->steps()->exists())
-            <div class="entry__content">
-                <p class="lead drop-cap">
-                    {{ $single->lead_paragraph }}
-                </p>
-                <div class="row half-bottom">
-                    <div class="column large-6 tab-full">
-                        {!! $single->table_of_contents !!}}
-                    </div>
-                </div>
-                @foreach ($single->steps as $step)
-                    <h2>{{$step->title}}</h2>
+                <div class="entry__content">
+                    <p class="lead drop-cap">
+                        {{ $single->lead_paragraph }}
+                    </p>
                     <p>
-                        {!!$step->description!!}
+                        {!! $single->table_of_contents !!}
+                    </p>
+                    @php
+                        $i = 0;
+                    @endphp
+                    @foreach ($single->steps as $step)
+                        @php
+                            $i++;
+                        @endphp
+                        <h2 id="title{{ $i }}">{{ $step->title }}</h2>
+                        <p>
+                            {!! $step->description !!}
+                        </p>
+                        <div class="entry__post-thumb">
+                            <img src="{{ Storage::url($step->image) }}" alt="">
+                        </div>
+                    @endforeach
+                    <p>
+                        {!! $single->content !!}
                     </p>
                     <div class="entry__post-thumb">
-                        <img src="{{ Storage::url($step->image) }}" alt="">
+                        <img src="{{ Storage::url($single->image2) }}" alt="">
                     </div>
-                @endforeach
-                <p>
-                    {!! $single->content !!}
-                </p> 
-                <div class="entry__post-thumb">
-                    <img src="{{ Storage::url($single->image2) }}" alt="">
-                </div>         
-            </div>
+                </div>
             @else
-            <div class="entry__content">
-                <p class="lead drop-cap">
-                    {!! $single->lead_paragraph !!}
-                </p>
-                <div class="row half-bottom">
-                    <div class="column large-6 tab-full">
-                        <h2>Table of Contents</h2>
-                        {!! $single->table_of_contents !!}
+                <div class="entry__content">
+                    <p class="lead drop-cap">
+                        {!! $single->lead_paragraph !!}
+                    </p>
+                    <div class="row half-bottom">
+                        <div class="column large-6 tab-full">
+                            <h2>Table of Contents</h2>
+                            {!! $single->table_of_contents !!}
+                        </div>
                     </div>
-                </div>
-                <div class="entry__post-thumb">
-                    <img src="{{ Storage::url($single->image2) }}" alt="">
-                </div>
-                <p>
-                    {!! $single->content !!}
-                </p>
-                <div class="entry__post-thumb">
-                    <img src="{{ Storage::url($single->image1) }}" alt="">
+                    <div class="entry__post-thumb">
+                        <img src="{{ Storage::url($single->image2) }}" alt="">
+                    </div>
+                    <p>
+                        {!! $single->content !!}
+                    </p>
+                    <div class="entry__post-thumb">
+                        <img src="{{ Storage::url($single->image1) }}" alt="">
+                    </div>
+
+                    <p class="entry__tags">
+                        <span>Post Tags</span>
+
+                        <span class="entry__tag-list">
+                            @foreach ($single->categories as $tag)
+                                <a href="{{ route('reader.category', ['id' => $tag->id]) }}">{{ $tag->name }}</a>
+                            @endforeach
+                        </span>
+                    </p>
+
                 </div>
 
-                <p class="entry__tags">
-                    <span>Post Tags</span>
-
-                    <span class="entry__tag-list">
-                        @foreach ($single->categories as $tag)
-                            <a href="{{route('reader.category',['id'=>$tag->id])}}">{{ $tag->name }}</a>
-                        @endforeach
-                    </span>
-                </p>
-
-            </div>
-                
             @endif
-            
+
             <div class="entry__related">
                 <h3 class="h2">Related Articles</h3>
                 <ul class="related">
-                    @foreach($related as $relate)
-                    <li class="related__item">
-                        <a href="{{route('reader.view',['id'=>$relate->id])}}" class="related__link">
-                            <img src="{{ Storage::url($relate->image1) }}" alt="">
-                        </a>
-                        <h5 class="related__post-title">{{$relate->title}}</h5>
-                    </li>
+                    @foreach ($related as $relate)
+                        <li class="related__item">
+                            <a href="{{ route('reader.view', ['id' => $relate->id]) }}" class="related__link">
+                                <img src="{{ Storage::url($relate->image1) }}" alt="">
+                            </a>
+                            <h5 class="related__post-title">{{ $relate->title }}</h5>
+                        </li>
                     @endforeach
                 </ul>
             </div>

@@ -1,6 +1,6 @@
 @extends('layouts.reader')
 @section('description', '')
-@section('title', 'ByteInsider: ')
+@section('title', 'ByteInsider: Home ')
 @section('content')
 
     <div class="masonry-wrap">

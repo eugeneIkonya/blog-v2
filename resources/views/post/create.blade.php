@@ -61,7 +61,7 @@
                     <button type="button" onclick="addTag('h3', 'lead_paragraph')">Add H3</button>
                     <button type="button" onclick="addTag('strong', 'lead_paragraph')">Add Strong</button>
                 </div>
-                <textarea name= 'lead_paragraph' class="form-control" id="lead_paragraph" rows="3"></textarea>
+                <textarea name= 'lead_paragraph' class="form-control" id="lead_paragraph" rows="10"></textarea>
             </div>
             <div class="mb-3">
                 <label for="table_of_contents" class="form-label">Table of contents</label>
@@ -72,7 +72,7 @@
                     <button type="button" onclick="addTag('h3', 'table_of_contents')">Add H3</button>
                     <button type="button" onclick="addTag('strong', 'table_of_contents')">Add Strong</button>
                 </div>
-                <textarea name= 'table_of_contents' class="form-control" id="table_of_contents" rows="3"></textarea>
+                <textarea name= 'table_of_contents' class="form-control" id="table_of_contents" rows="10"></textarea>
             </div>
             <div id="stepsContainer" style="display: none;">
                 <!-- Step fields will be inserted here -->
@@ -86,7 +86,7 @@
                     <button type="button" onclick="addTag('h3', 'content')">Add H3</button>
                     <button type="button" onclick="addTag('strong', 'content')">Add Strong</button>
                 </div>
-                <textarea name= 'content' class="form-control" id="content" rows="3"></textarea>
+                <textarea name= 'content' class="form-control" id="content" rows="10"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

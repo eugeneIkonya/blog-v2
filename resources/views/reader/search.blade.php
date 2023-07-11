@@ -1,6 +1,8 @@
 @extends('layouts.reader')
 @section('description', '')
-@section('title', 'ByteInsider: ')
+@section('title')
+    ByteInsider : {{$search}}
+@endsection
 @section('content')
 <header class="listing-header">
     <h1 class="h2">Search Results</h1>

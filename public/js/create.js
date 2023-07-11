@@ -30,7 +30,7 @@ window.onload = function() {
         let listItems = '';
     
         for (let i = 0; i < itemCount; i++) {
-            listItems += '<li><strong></strong></li>\n';
+            listItems += '<li><a href="#title"><strong></strong></a></li>\n';
         }
     
         const tagContent = `<ol>\n${listItems}</ol>\n`;

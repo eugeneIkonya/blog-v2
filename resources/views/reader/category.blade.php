@@ -1,7 +1,8 @@
 @extends('layouts.reader')
 @section('description', '')
-@section('title', 'ByteInsider: ')
-@section('content')
+@section('title') 
+'ByteInsider:' {{$category->name}}
+@endsection
 <header class="listing-header">
     <h1 class="h2">Category: {{$category->name}}</h1>
 </header>
