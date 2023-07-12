@@ -52,9 +52,11 @@
                         <p>
                             {!! $step->description !!}
                         </p>
+                        @if($step->image)
                         <div class="entry__post-thumb">
                             <img src="{{ Storage::url($step->image) }}" alt="">
                         </div>
+                        @endif
                     @endforeach
                     <p>
                         {!! $single->content !!}
