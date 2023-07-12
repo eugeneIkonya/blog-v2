@@ -14,12 +14,12 @@
 
             <div class="content__page-header">
                 <h1 class="display-1">
-                Hello, We Are TypeRite.
+                    Welcome to Byte Insider.
                 </h1>
             </div> <!-- end content__page-header -->
 
             <p class="lead drop-cap">
-                Welcome to Byte Insider, your trusted companion in navigating the digital universe. We delve into the heart of technology, its pivotal role in our daily lives, and how it can be harnessed for greater productivity and efficiency. Our blog is more than just a news portal or gadget review site. We take you on a journey across the vast digital landscape, highlighting the immense potential of productivity tools and sharing tips to streamline your workflow. 
+                 Your trusted companion in navigating the digital universe. We delve into the heart of technology, its pivotal role in our daily lives, and how it can be harnessed for greater productivity and efficiency. Our blog is more than just a news portal or gadget review site. We take you on a journey across the vast digital landscape, highlighting the immense potential of productivity tools and sharing tips to streamline your workflow. 
             </p>
 
             <p>

@@ -17,7 +17,10 @@
     {{-- script --}}
     <script src="{{ asset('js/modernizr.js') }}"></script>
     {{-- favicons --}}
-    {{-- <link rel="manifest" href="site.webmanifest"> --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{ asset('images/favicon/site.webmanifest')}}">
 
 </head>
 
@@ -37,7 +40,7 @@
         <div class="s-content">
             @yield('content')
         </div>
-        
+
         @include('components.footer')
     </div>
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
