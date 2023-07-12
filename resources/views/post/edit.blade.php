@@ -121,9 +121,10 @@
                 titleField.classList.add('form-control', 'my-2');
                 console.log(titleField);
 
-                const descField = document.createElement('input');
+                const descField = document.createElement('textarea');
                 descField.type = 'text';
                 descField.name = 'steps[desc][]';
+                descField.rows = '10';
                 descField.placeholder = 'Description';
                 descField.value = step.description;
                 descField.classList.add('form-control', 'my-2');
