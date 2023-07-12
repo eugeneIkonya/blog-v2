@@ -28,7 +28,7 @@
                         <div class="entry__meta">
                             <span class="entry__meta-cat">
                                 @foreach ($post->categories as $category)
-                                    <a href="{{route('reader.category',['id'=>$category->id])}}">{{$category->title}}</a>                                 
+                                    <a href="{{route('reader.category',['id'=>$category->id])}}">{{$category->name}}</a>                                 
                                 @endforeach
                             </span>
                             <span class="entry__meta-date">
