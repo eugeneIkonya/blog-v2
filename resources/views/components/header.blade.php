@@ -12,8 +12,8 @@
             <li class="has-children">
                 <a href="#0" title="">Categories</a>
                 <ul class="sub-menu">
-                    @foreach ($popular_categories as $tag)
-                        <li><a href="{{route('reader.category',['id'=>$tag->id])}}">{{$tag->name}}</a></li>   
+                    @foreach ($popular_categories as $category)
+                        <li><a href="{{route('reader.category',['id'=>$category->id])}}">{{$category->name}}</a></li>   
                     @endforeach            
                 </ul>
             </li>
