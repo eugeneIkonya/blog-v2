@@ -1,13 +1,13 @@
 @extends('layouts.reader')
 @php
-    $keywords = implode(',',json_decode($single->keywords));
+    $keywords = implode(',', json_decode($single->keywords));
 @endphp
 @section('keywords')
-{{$keywords}}
+    {{ $keywords }}
 @endsection
-@section('description',{{$single->lead_paragraph}})
-@section('title') 
-{{$single->title}}
+@section('description', '{{ $single->lead_paragraph }}')
+@section('title')
+    {{ $single->title }}
 @endsection
 @section('content')
     <main class="row content__page">
@@ -68,12 +68,10 @@
                     <p class="lead drop-cap">
                         {!! $single->lead_paragraph !!}
                     </p>
-                    <div class="row half-bottom">
-                        <div class="column large-6 tab-full">
-                            <h2>Table of Contents</h2>
-                            {!! $single->table_of_contents !!}
-                        </div>
-                    </div>
+                    <p>
+                    <h2>Table of Contents</h2>
+                    {!! $single->table_of_contents !!}
+                    </p>
                     <div class="entry__post-thumb">
                         <img src="{{ Storage::url($single->image2) }}" alt="">
                     </div>
