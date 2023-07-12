@@ -164,7 +164,7 @@
                 titleField.placeholder = 'Title';
                 titleField.classList.add('form-control', 'my-2');
 
-                const descField = document.createElement('input');
+                const descField = document.createElement('textarea');
                 descField.type = 'text';
                 descField.name = 'steps[desc][]';
                 descField.placeholder = 'Description';
