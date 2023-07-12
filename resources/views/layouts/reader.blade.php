@@ -22,7 +22,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon/favicon-16x16.png')}}">
     <link rel="manifest" href="{{ asset('images/favicon/site.webmanifest')}}">
 </head>
-    @include('components.google.blade.php')
+    @include('components.google')
 <body>
     {{-- preloader --}}
     <div id="preloader">
