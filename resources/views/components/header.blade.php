@@ -18,6 +18,7 @@
                 </ul>
             </li>
             <li><a href="{{route('reader.blog')}}" title="">Blog</a></li>
+            <li><a href="{{route('reader.about')}}" title="">About</a></li>
             {{-- <li><a href="#0" title="">Trending</a></li>
             <li><a href="#0" title="">About</a></li> --}}
         </ul>

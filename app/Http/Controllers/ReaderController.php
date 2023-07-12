@@ -18,6 +18,10 @@ class ReaderController extends Controller
         $popular_categories = $this->getPopularCategories(10);
         return view('reader.index',compact('posts','recents','popular_posts','popular_categories','affiliates'));
     }
+    public function about(){
+        $popular_categories = $this->getPopularCategories(10);
+        return view('reader.about',compact('popular_categories'));
+    }
     public function view($id){
         $single = Post::findOrFail($id);
         $sessionId = Session::getId();

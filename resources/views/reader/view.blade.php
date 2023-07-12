@@ -2,11 +2,12 @@
 @php
     $keywords = implode(',',json_decode($single->keywords));
 @endphp
-@section('description')
+@section('keywords')
 {{$keywords}}
 @endsection
+@section('description',{{$single->lead_paragraph}})
 @section('title') 
-'ByteInsider:' {{$single->title}}
+{{$single->title}}
 @endsection
 @section('content')
     <main class="row content__page">

@@ -1,5 +1,4 @@
 @extends('layouts.reader')
-@section('description', '')
 @section('title', 'ByteInsider: Home ')
 @section('content')
 
@@ -26,7 +25,7 @@
                         <div class="entry__meta">
                             <span class="entry__meta-cat">
                                 @foreach ($post->categories as $category)
-                                    <a href="{{route('reader.category',['id'=>$category->id])}}">{{$category->title}}</a>                                 
+                                    <a href="{{route('reader.category',['id'=>$category->id])}}">{{$category->name}}</a>                                 
                                 @endforeach
                             </span>
                             <span class="entry__meta-date">
@@ -46,8 +45,7 @@
 
                 <div class="entry__thumb">
                     <blockquote>
-                        <p>Good design is making something intelligible and memorable. Great design is making
-                            something memorable and meaningful.</p>
+                        <p>At Byte Insider, we're all about empowering you to seize the benefits of technology and enhance your lifestyle. Together, let's explore and embrace the future, one byte at a time.</p>
 
                     </blockquote>
                 </div>

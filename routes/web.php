@@ -50,6 +50,7 @@ Route::prefix('/affiliate')->name('affiliate.')->group(function(){
 Route::prefix('/')->name('reader.')->group(function(){
     Route::get('/','ReaderController@index')->name('welcome');
     Route::get('/blog','ReaderController@blog')->name('blog');
+    Route::get('/about','ReaderController@about')->name('about');
     Route::get('/affiliate/{id}','ReaderController@affiliate')->name('affiliate');
     Route::match(['get', 'post'], '/search', 'ReaderController@search')->name('search');
     Route::get('/view/{id}','ReaderController@view')->name('view');
