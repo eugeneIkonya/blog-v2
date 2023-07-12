@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const descField = document.createElement('textarea');
         descField.type = 'text';
         descField.name = 'steps[desc][]';
+        descField.rows = '10';
         descField.placeholder = 'Description';
         descField.classList.add('form-control', 'my-2');
     
