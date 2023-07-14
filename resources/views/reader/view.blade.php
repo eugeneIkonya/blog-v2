@@ -89,7 +89,7 @@
 
                         <span class="entry__tag-list">
                             @foreach ($single->categories as $tag)
-                                <a href="{{ route('reader.category', ['id' => $tag->id]) }}">{{ $tag->name }}</a>
+                                <a href="{{ route('reader.category', ['id' => $tag->id,'name'=>$tag->name]) }}">{{ $tag->name }}</a>
                             @endforeach
                         </span>
                     </p>
