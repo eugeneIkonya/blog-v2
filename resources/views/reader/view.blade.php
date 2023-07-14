@@ -27,7 +27,7 @@
                     <li class="date">{{ $single->created_at->format('F d, Y') }}</li>
                     <li class="cat-links">
                         @foreach ($single->categories as $tag)
-                            <a href="{{ route('reader.category', ['id' => $tag->id]) }}">{{ $tag->name }}</a>
+                            <a href="{{ route('reader.category', ['id' => $tag->id,'name'=>$tag->name]) }}">{{ $tag->name }}</a>
                         @endforeach
                     </li>
                 </ul>
