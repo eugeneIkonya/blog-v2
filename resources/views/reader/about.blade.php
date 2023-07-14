@@ -1,5 +1,6 @@
 @extends('layouts.reader')
 @section('title', 'ByteInsider: About ')
+@section('description','About Byteinsider')
 @section('content')
 <div class="s-content content">
     <main class="row content__page">

@@ -1,6 +1,7 @@
 @extends('layouts.reader')
 @section('description', '')
 @section('title', 'ByteInsider: Blog')
+@section('description', 'Blog Posts on Byteinsider')
 @section('content')
 <header class="listing-header">
     <h1 class="h2">Blog</h1>

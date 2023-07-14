@@ -1,5 +1,6 @@
 @extends('layouts.reader')
 @section('title', 'ByteInsider: Home ')
+@section('description','Homepage of Byteinsider')
 @section('content')
 <h1 class="h2">Home</h1>
     <div class="masonry-wrap">
