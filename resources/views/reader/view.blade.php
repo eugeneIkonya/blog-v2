@@ -7,7 +7,7 @@
 @endsection
 @section('description') {{ $single->lead_paragraph }} @endsection
 @section('title')
-{{ Str::limit($single->title,65) }}
+    {{ $single->title }}
 @endsection
 @section('content')
     <main class="row content__page">

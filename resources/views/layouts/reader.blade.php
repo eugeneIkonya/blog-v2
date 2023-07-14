@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     <meta name="keywords" content="@yield('keywords')">
     <meta name="description" content="@yield('description')">
-
+    <meta name='ir-site-verification-token' value='113904460'>
     {{-- mobile specific metas --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
