@@ -20,7 +20,7 @@
     </url>
     @foreach ($posts as $post)
         <url>
-            <loc>{{ url('view/' . $post->id . '/'.$post->title) }}</loc>
+            <loc>{{ url('view/' . $post->id . '/'.str_replace(' ','-',$post->title)) }}</loc>
             <lastmod>{{ gmdate('Y-m-d\TH:i:s\Z',strtotime($post->updated_at)) }}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.6</priority>
@@ -28,7 +28,7 @@
     @endforeach
     @foreach ($categories as $category)
         <url>
-            <loc>{{ url('category/' . $category->id .'/'.$category->name) }}</loc>
+            <loc>{{ url('category/' . $category->id .'/'.str_replace(' ','-',$category->name)) }}</loc>
             <lastmod>{{ gmdate('Y-m-d\TH:i:s\Z',strtotime($category->updated_at)) }}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.6</priority>

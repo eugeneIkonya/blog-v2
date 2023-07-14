@@ -27,7 +27,7 @@
                     <li class="date">{{ $single->created_at->format('F d, Y') }}</li>
                     <li class="cat-links">
                         @foreach ($single->categories as $tag)
-                            <a href="{{ route('reader.category', ['id' => $tag->id,'name'=>$tag->name]) }}">{{ $tag->name }}</a>
+                            <a href="{{ route('reader.category', ['id' => $tag->id,'name'=>str_replace(' ','-',$tag->name)]) }}">{{ $tag->name }}</a>
                         @endforeach
                     </li>
                 </ul>
@@ -104,7 +104,7 @@
                 <ul class="related">
                     @foreach ($related as $relate)
                         <li class="related__item">
-                            <a href="{{ route('reader.view', ['id' => $relate->id,'name'=>$relate->title]) }}" class="related__link">
+                            <a href="{{ route('reader.view', ['id' => $relate->id,'name'=>str_replace(' ','-',$relate->title)]) }}" class="related__link">
                                 <img lazy="loading" src="{{ Storage::url($relate->image1) }}" alt="">
                             </a>
                             <h5 class="related__post-title">{{ $relate->title }}</h5>

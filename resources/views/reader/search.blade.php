@@ -19,18 +19,18 @@
             @endphp
             <article class="masonry__brick entry format-standard animate-this">
                 <div class="entry__thumb">
-                    <a href="{{ route('reader.view', ['id'=>$post->id,'name'=>$post->title]) }}" class="entry__thumb-link">
+                    <a href="{{ route('reader.view', ['id'=>$post->id,'name'=>str_replace(' ','-',$post->title)]) }}" class="entry__thumb-link">
                         <img lazy="loading" src="{{Storage::url($post->image1)}}" alt="">
                     </a>
                 </div>
                 <div class="entry__text">
                     <div class="entry__header">
-                        <h2 class="entry__title"><a href="{{ route('reader.view', ['id'=>$post->id,'name'=>$post->title]) }}">{{ $post->title }}</a>
+                        <h2 class="entry__title"><a href="{{ route('reader.view', ['id'=>$post->id,'name'=>str_replace(' ','-',$post->title)]) }}">{{ $post->title }}</a>
                         </h2>
                         <div class="entry__meta">
                             <span class="entry__meta-cat">
                                 @foreach ($post->categories as $category)
-                                    <a href="{{route('reader.category',['id'=>$category->id,'name'=>$category->name])}}">{{$category->name}}</a>                                 
+                                    <a href="{{route('reader.category',['id'=>$category->id,'name'=>str_replace(' ','-',$category->name)])}}">{{$category->name}}</a>                                 
                                 @endforeach
                             </span>
                             <span class="entry__meta-date">
@@ -65,7 +65,7 @@
             <ul class="related">
                 @foreach($recents as $relate)
                 <li class="related__item">
-                    <a href="{{route('reader.view',['id'=>$relate->id,'name'=>$relate->title])}}" class="related__link">
+                    <a href="{{route('reader.view',['id'=>$relate->id,'name'=>str_replace(' ','-',$relate->title)])}}" class="related__link">
                         <img src="{{ Storage::url($relate->image1) }}" alt="">
                     </a>
                     <h5 class="related__post-title">{{$relate->title}}</h5>
