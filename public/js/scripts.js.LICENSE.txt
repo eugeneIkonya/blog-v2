@@ -1,0 +1,13 @@
+/*!
+ * jQuery JavaScript Library v3.7.0
+ * https://jquery.com/
+ *
+ * Copyright OpenJS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.org/license
+ *
+ * Date: 2023-05-11T18:29Z
+ */
+
+/*! modernizr 3.3.1 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-audio-backgroundblendmode-canvas-cssanimations-csscalc-cssfilters-cssgradients-cssremunit-csstransforms-csstransforms3d-csstransitions-flexbox-flexboxlegacy-flexboxtweener-flexwrap-svg-touchevents-video-setclasses !*/

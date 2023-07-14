@@ -11,9 +11,7 @@
     {{-- mobile specific metas --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- CSS --}}
-    <link rel="stylesheet" href="{{ asset('css/base.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/vendor.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- script --}}
     <script src="{{ asset('js/modernizr.js') }}"></script>
     {{-- favicons --}}

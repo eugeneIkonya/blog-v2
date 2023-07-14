@@ -20,6 +20,7 @@
       <th scope="col">Content</th>
       <th scope="col">Image</th>
       <th scope="col">Categories</th>
+      <th scope="col">Views</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -32,12 +33,14 @@
         <td>
           <img src="{{ Storage::url($post->image1) }}" alt="Post Image" class="disp" width="100">
           @if($post->image2) <img src="{{ Storage::url($post->image2) }}" alt="Post Image" class="disp" width="100">@endif
-          @if($post->image3) <img src="{{ Storage::url($post->image3) }}" alt="Post Image" class="disp" width="100">@endif
         </td>
         <td>
           @foreach($post->categories as $category)
             <span class="badge badge-primary">{{ $category->name }}</span>
           @endforeach
+        </td>
+        <td>
+          {{$post->views}}
         </td>
         <td>
           <a href="{{ route('post.edit', ['id' => $post->id]) }}" class="btn btn-primary">Edit</a>

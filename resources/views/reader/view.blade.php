@@ -15,7 +15,7 @@
             {{-- image --}}
             <div class="media-wrap entry__media">
                 <div class="entry__post-thumb">
-                    <img src="{{ Storage::url($single->image1) }}" alt="">
+                    <img lazy="loading" src="{{ Storage::url($single->image1) }}" alt="">
                 </div>
             </div>
             {{-- entry header  --}}
@@ -62,7 +62,7 @@
                         {!! $single->content !!}
                     </p>
                     <div class="entry__post-thumb">
-                        <img src="{{ Storage::url($single->image2) }}" alt="">
+                        <img lazy="loading" src="{{ Storage::url($single->image2) }}" alt="">
                     </div>
                 </div>
             @else
@@ -75,13 +75,13 @@
                     {!! $single->table_of_contents !!}
                     </p>
                     <div class="entry__post-thumb">
-                        <img src="{{ Storage::url($single->image2) }}" alt="">
+                        <img lazy="loading" src="{{ Storage::url($single->image2) }}" alt="">
                     </div>
                     <p>
                         {!! $single->content !!}
                     </p>
                     <div class="entry__post-thumb">
-                        <img src="{{ Storage::url($single->image1) }}" alt="">
+                        <img lazy="loading" src="{{ Storage::url($single->image1) }}" alt="">
                     </div>
 
                     <p class="entry__tags">
@@ -103,8 +103,8 @@
                 <ul class="related">
                     @foreach ($related as $relate)
                         <li class="related__item">
-                            <a href="{{ route('reader.view', ['id' => $relate->id]) }}" class="related__link">
-                                <img src="{{ Storage::url($relate->image1) }}" alt="">
+                            <a href="{{ route('reader.view', ['id' => $relate->id,'name'=>$relate->title]) }}" class="related__link">
+                                <img lazy="loading" src="{{ Storage::url($relate->image1) }}" alt="">
                             </a>
                             <h5 class="related__post-title">{{ $relate->title }}</h5>
                         </li>

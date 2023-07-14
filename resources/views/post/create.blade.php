@@ -92,5 +92,5 @@
         </form>
         
     </div>
-    <script src="{{ asset('js/step.js') }}"></script>
+    
 @endsection
