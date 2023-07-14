@@ -10,6 +10,7 @@
 
     {{-- mobile specific metas --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="1F9mcnk7LowRaR9XJLvkjHuwySfrcxT52byoqSIFo20" />
     {{-- CSS --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- script --}}

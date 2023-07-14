@@ -22,12 +22,12 @@
             {{-- <li><a href="#0" title="">Trending</a></li>
             <li><a href="#0" title="">About</a></li> --}}
         </ul>
+        <li class="ss-twitter">
+            <a href="https://twitter.com/ByteInsiderinfo"><span class="screen-reader-text">Twitter</span></a>
+        </li>
         {{-- <ul class="header__social">
             <li class="ss-facebook">
                 <a href="#0"><span class="screen-reader-text">Facebook</span></a>
-            </li>
-            <li class="ss-twitter">
-                <a href="#0"><span class="screen-reader-text">Twitter</span></a>
             </li>
             <li class="ss-dribbble">
                 <a href="#0"><span class="screen-reader-text">Dribble</span></a>
