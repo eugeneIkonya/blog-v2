@@ -52,8 +52,8 @@ Route::prefix('/')->name('reader.')->group(function () {
     Route::get('/about', 'ReaderController@about')->name('about');
     Route::get('/affiliate/{id}', 'ReaderController@affiliate')->name('affiliate');
     Route::match(['get', 'post'], '/search', 'ReaderController@search')->name('search');
-    Route::get('/view/{id}/{name?}', 'ReaderController@view')->name('view');
-    Route::get('/category/{id}/{name?}', 'ReaderController@category')->name('category');
+    Route::get('/view/{id}/{name}', 'ReaderController@view')->name('view');
+    Route::get('/category/{id}/{name}', 'ReaderController@category')->name('category');
 });
 // site-map
 Route::get('sitemap.xml', 'SitemapController@index');

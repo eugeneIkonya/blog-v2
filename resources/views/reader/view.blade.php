@@ -38,6 +38,7 @@
                     <p class="lead drop-cap">
                         {{ $single->lead_paragraph }}
                     </p>
+                    <h2>Overview</h2>
                     <p>
                         {!! $single->table_of_contents !!}
                     </p>
@@ -71,7 +72,7 @@
                         {!! $single->lead_paragraph !!}
                     </p>
                     <p>
-                    <h2>Table of Contents</h2>
+                    <h2>Overview</h2>
                     {!! $single->table_of_contents !!}
                     </p>
                     <div class="entry__post-thumb">
