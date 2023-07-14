@@ -1,5 +1,5 @@
 @extends('layouts.reader')
-@section('description', '')
+@section('description', 'Search Results')
 @section('title')
 {{$search}}
 @endsection

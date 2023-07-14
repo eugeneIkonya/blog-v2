@@ -5,7 +5,7 @@
 @section('keywords')
     {{ $keywords }}
 @endsection
-@section('description', '{{ $single->lead_paragraph }}')
+@section('description', {{ $single->lead_paragraph }})
 @section('title')
     {{ $single->title }}
 @endsection
