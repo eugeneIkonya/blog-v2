@@ -1,7 +1,7 @@
 @extends('layouts.reader')
 @section('title', 'ByteInsider: Home ')
 @section('content')
-
+<h1 class="h2">Home</h1>
     <div class="masonry-wrap">
         <div class="masonry">
             <div class="grid-sizer"></div>
