@@ -55,7 +55,7 @@
                         </p>
                         @if($step->image)
                         <div class="entry__post-thumb">
-                            <img src="{{ Storage::url($step->image) }}" alt="">
+                            @if($step->image)<img src="{{ Storage::url($step->image) }}" alt="">@endif
                         </div>
                         @endif
                     @endforeach
@@ -63,7 +63,7 @@
                         {!! $single->content !!}
                     </p>
                     <div class="entry__post-thumb">
-                        <img lazy="loading" src="{{ Storage::url($single->image2) }}" alt="">
+                        @if($single->image2)<img lazy="loading" src="{{ Storage::url($single->image2) }}" alt="">@endif
                     </div>
                 </div>
             @else
@@ -76,7 +76,7 @@
                     {!! $single->table_of_contents !!}
                     </p>
                     <div class="entry__post-thumb">
-                        <img lazy="loading" src="{{ Storage::url($single->image2) }}" alt="">
+                        @if($single->image2)<img lazy="loading" src="{{ Storage::url($single->image2) }}" alt="">@endif
                     </div>
                     <p>
                         {!! $single->content !!}
@@ -90,7 +90,7 @@
 
                         <span class="entry__tag-list">
                             @foreach ($single->categories as $tag)
-                                <a href="{{ route('reader.category', ['id' => $tag->id,'name'=>$tag->name]) }}">{{ $tag->name }}</a>
+                                <a href="{{ route('reader.category', ['id' => $tag->id,'name'=>str_replace(' ','-',$tag->name)]) }}">{{ $tag->name }}</a>
                             @endforeach
                         </span>
                     </p>
