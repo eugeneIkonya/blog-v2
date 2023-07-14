@@ -10,7 +10,7 @@
     @endforeach
     @foreach ($categories as $category)
         <url>
-            <loc>{{ url('view/' . $category->id) }}</loc>
+            <loc>{{ url('category/' . $category->id) }}</loc>
             <lastmod>{{ gmdate('Y-m-d\TH:i:s\Z',strtotime($category->updated_at)) }}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.6</priority>
