@@ -1,5 +1,5 @@
 @extends('layouts.reader')
-@section('description', '{{$category->description}}')
+@section('description') {{$category->description}} @endsection
 @section('title') 
 'ByteInsider:' {{$category->name}}
 @endsection
