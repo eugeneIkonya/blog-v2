@@ -13,14 +13,14 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>{{ url('/blog') }}</loc>
+        <loc>{{ url('/posts') }}</loc>
         <lastmod>2023-07-12T02:12:22Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     @foreach ($posts as $post)
         <url>
-            <loc>{{ url('view/' . $post->id . '/'.str_replace(' ','-',$post->title)) }}</loc>
+            <loc>{{ $post->getLink() }}</loc>
             <lastmod>{{ gmdate('Y-m-d\TH:i:s\Z',strtotime($post->updated_at)) }}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.6</priority>
@@ -28,7 +28,7 @@
     @endforeach
     @foreach ($categories as $category)
         <url>
-            <loc>{{ url('category/' . $category->id .'/'.str_replace(' ','-',$category->name)) }}</loc>
+            <loc>{{ $category->getLink() }}</loc>
             <lastmod>{{ gmdate('Y-m-d\TH:i:s\Z',strtotime($category->updated_at)) }}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.6</priority>
