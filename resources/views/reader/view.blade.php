@@ -26,8 +26,8 @@
                 <ul class="entry__header-meta">
                     <li class="date">{{ $single->created_at->format('F d, Y') }}</li>
                     <li class="cat-links">
-                        @foreach ($single->categories as $tag)
-                            <a href="{{ route('reader.category', ['id' => $tag->id,'name'=>str_replace(' ','-',$tag->name)]) }}">{{ $tag->name }}</a>
+                        @foreach ($single->categories as $category)
+                            <a href="{{$category->getLink()}}">{{ $category->name }}</a>
                         @endforeach
                     </li>
                 </ul>
@@ -85,26 +85,24 @@
                         <img lazy="loading" src="{{ Storage::url($single->image1) }}" alt="">
                     </div>
 
-                    <p class="entry__tags">
-                        <span>Post Tags</span>
-
-                        <span class="entry__tag-list">
-                            @foreach ($single->categories as $tag)
-                                <a href="{{ route('reader.category', ['id' => $tag->id,'name'=>str_replace(' ','-',$tag->name)]) }}">{{ $tag->name }}</a>
-                            @endforeach
-                        </span>
-                    </p>
-
                 </div>
 
             @endif
+            <p class="entry__tags">
+                <span>Post Tags</span>
 
+                <span class="entry__tag-list">
+                    @foreach ($single->categories as $category)
+                        <a href="{{$category->getLink()}}">{{ $category->name }}</a>
+                    @endforeach
+                </span>
+            </p>
             <div class="entry__related">
                 <h3 class="h2">Related Articles</h3>
                 <ul class="related">
                     @foreach ($related as $relate)
                         <li class="related__item">
-                            <a href="{{ route('reader.view', ['id' => $relate->id,'name'=>str_replace(' ','-',$relate->title)]) }}" class="related__link">
+                            <a href="{{$relate->getLink()}}" class="related__link">
                                 <img lazy="loading" src="{{ Storage::url($relate->image1) }}" alt="">
                             </a>
                             <h5 class="related__post-title">{{ $relate->title }}</h5>

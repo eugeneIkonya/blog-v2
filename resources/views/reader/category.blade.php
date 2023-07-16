@@ -19,18 +19,18 @@
             @endphp
             <article class="masonry__brick entry format-standard animate-this">
                 <div class="entry__thumb">
-                    <a href="{{ route('reader.view', ['id'=>$post->id,'name'=>str_replace(' ','-',$post->title)]) }}" class="entry__thumb-link">
+                    <a href="{{$post->getLink()}}" class="entry__thumb-link">
                         <img lazy="loading" src="{{Storage::url($post->image1)}}" alt="">
                     </a>
                 </div>
                 <div class="entry__text">
                     <div class="entry__header">
-                        <h2 class="entry__title"><a href="{{ route('reader.view', ['id'=>$post->id,'name'=>str_replace(' ','-',$post->title)]) }}">{{ $post->title }}</a>
+                        <h2 class="entry__title"><a href="{{$post->getLink()}}">{{ $post->title }}</a>
                         </h2>
                         <div class="entry__meta">
                             <span class="entry__meta-cat">
                                 @foreach ($post->categories as $category)
-                                    <a href="{{route('reader.category',['id'=>$category->id,'name'=>str_replace(' ','-',$category->name)])}}">{{$category->name}}</a>                                 
+                                    <a href="{{$category->getLink()}}">{{$category->name}}</a>                                 
                                 @endforeach
                             </span>
                             <span class="entry__meta-date">

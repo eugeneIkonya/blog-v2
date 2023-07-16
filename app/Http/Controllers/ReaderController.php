@@ -33,9 +33,9 @@ class ReaderController extends Controller
         return view('reader.about', compact('popular_categories'));
     }
 
-    public function view($id)
+    public function view($slug)
     {
-        $single = Post::findOrFail($id);
+        $single = Post::where('slug',$slug)->first();
         $sessionId = Session::getId();
         $recents = $this->getRecentPosts(5);
         $popular_posts = $this->getPopularPosts(5);
@@ -53,14 +53,13 @@ class ReaderController extends Controller
         return view('reader.view', compact('related', 'single', 'posts', 'recents', 'popular_posts', 'popular_categories'));
     }
 
-    public function category($id)
+    public function category($slug)
     {
         $recents = $this->getRecentPosts(5);
         $popular_posts = $this->getPopularPosts(5);
         $popular_categories = $this->getPopularCategories(10);
-        $category = Category::find($id);
+        $category = Category::where('slug',$slug)->first();
         $posts = $category->posts()->paginate(12);
-
         return view('reader.category', compact('category', 'posts', 'recents', 'popular_posts', 'popular_categories'));
     }
 

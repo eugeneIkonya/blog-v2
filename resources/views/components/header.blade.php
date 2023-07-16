@@ -13,7 +13,7 @@
                 <a href="#0" title="">Categories</a>
                 <ul class="sub-menu">
                     @foreach ($popular_categories as $category)
-                        <li><a href="{{route('reader.category',['id'=>$category->id,'name'=>str_replace(' ','-',$category->name)])}}">{{$category->name}}</a></li>   
+                        <li><a href="{{$category->getLink()}}">{{$category->name}}</a></li>   
                     @endforeach            
                 </ul>
             </li>
