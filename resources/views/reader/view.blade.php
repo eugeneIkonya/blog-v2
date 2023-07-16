@@ -49,7 +49,7 @@
                         @php
                             $i++;
                         @endphp
-                        <h2 id="title{{ $i }}">{{ $step->title }}</h2>
+                        <h2 id="title{{ $i }}">{!! $step->title !!}</h2>
                         <p>
                             {!! $step->description !!}
                         </p>
