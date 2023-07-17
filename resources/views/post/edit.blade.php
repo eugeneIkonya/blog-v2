@@ -34,6 +34,11 @@
                     <label for="image2" class="form-label">Image 2</label>
                     <input type="file" name='image2' class="form-control" id="image2">
                     <img src="{{ Storage::url($post->image2) }}" alt="Post Image" width="100">
+                    <input class="form-check-input" type="checkbox" name="delete_image" id="delete_image"
+                        value="1">
+                    <label class="form-check-label" for="delete_image">
+                        Delete Image
+                    </label>
                 </div>
             @endif
             <div class="mb-3">
@@ -186,7 +191,7 @@
                 imagePreview.src = "{{ Storage::url($post->image1) }}";
                 imagePreview.alt = "Step Image";
                 imagePreview.width = 100;
-                
+
                 // Add the image element to the container
                 imagePreviewContainer.appendChild(imagePreview);
                 console.log(imagePreview);

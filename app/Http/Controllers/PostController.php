@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use App\Post;
 use App\Category;
 use Flash;
@@ -49,21 +50,25 @@ class PostController extends Controller
     $post = Post::findOrFail($id);
 
     if ($request->hasFile('image1')) {
-        // Delete the old image
-        Storage::disk('public')->delete($post->image);
-        $file1 = $request->file('image1');
-        $filename1 = time() . '_1.' . $file1->getClientOriginalExtension();
-        $path1 = $file1->storeAs('images', $filename1, 'public');
+        $webp1 = Image::make($request->image1)->encode('webp', 90);
+        $filename1 = 'images/'.time() . '_1.webp';
+        $image1 = (string) $webp1;
+        Storage::disk('public')->put($filename1, $image1);
         Storage::disk('public')->delete($post->image1);
-        $post->image1 = $path1;
-        if($request->hasFile('image2')){
-            $file2 = $request->file('image2');
-            $filename2 = time() . '_2.' . $file2->getClientOriginalExtension();
-            $path2 = $file2->storeAs('images', $filename2, 'public');
-            Storage::disk('public')->delete($post->image2);
-            $post->image2 = $path2;
-        }   
+        $post->image1 = $filename1;   
     }  
+    if($request->hasFile('image2')){
+        $webp2 = Image::make($request->image2)->encode('webp', 90);
+        $filename2 = 'images/'.time() . '_2.webp';
+        $image2 = (string) $webp2;
+        Storage::disk('public')->put($filename2, $image2);
+        Storage::disk('public')->delete($post->image2);
+        $post->image2 = $filename2;
+    }
+    if($request->delete_image == 1){
+        $post->image2 = null;
+        Storage::disk('public')->delete($post->image2);
+    }
     $tags = explode(',',$request->tags); 
     $keywords = explode(',',$request->keywords); 
        
@@ -134,15 +139,19 @@ public function store(Request $request)
     // Handling the images
     if ($request->hasFile('image1')) {
         $post = new Post;
-        $file1 = $request->file('image1');
-        $filename1 = time() . '_1.' . $file1->getClientOriginalExtension();
-        $path1 = $file1->storeAs('images', $filename1, 'public');
-        $post->image1 = $path1;
+        $webp1 = Image::make($request->image1)->encode('webp', 90);
+        $filename1 = 'images/'.time() . '_1.webp';
+        $image1 = (string) $webp1;
+        Storage::disk('public')->put($filename1, $image1);
+        Storage::disk('public')->delete($post->image1);
+        $post->image1 = $filename1;   
         if($request->hasFile('image2')){
-            $file2 = $request->file('image2');
-            $filename2 = time() . '_2.' . $file2->getClientOriginalExtension();
-            $path2 = $file2->storeAs('images', $filename2, 'public');
-            $post->image2 = $path2;
+            $webp2 = Image::make($request->image2)->encode('webp', 90);
+            $filename2 = 'images/'.time() . '_2.webp';
+            $image2 = (string) $webp2;
+            Storage::disk('public')->put($filename2, $image2);
+            Storage::disk('public')->delete($post->image2);
+            $post->image2 = $filename2;
         }      
         $tags = explode(',',$request->tags); 
         $keywords = explode(',',$request->keywords); 

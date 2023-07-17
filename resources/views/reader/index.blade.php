@@ -30,7 +30,7 @@
                                 @endforeach
                             </span>
                             <span class="entry__meta-date">
-                                <a>{{ $post->created_at->format('F d, Y') }}</a>
+                                {{ $post->created_at->format('F d, Y') }}
                             </span>
                         </div>
                     </div>

@@ -24,13 +24,13 @@
     @include('components.google')
 <body>
     {{-- preloader --}}
-    <div id="preloader">
+    {{-- <div id="preloader">
         <div id="loader" class="dots-fade">
             <div></div>
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> --}}
     <div id="top" class="s-wrap site-wrapper">
         {{-- site header --}}
         @include('components.header')
