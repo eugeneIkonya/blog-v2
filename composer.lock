@@ -1637,6 +1637,7 @@
                 "md",
                 "parser"
             ],
+            
             "support": {
                 "docs": "https://commonmark.thephpleague.com/",
                 "issues": "https://github.com/thephpleague/commonmark/issues",
