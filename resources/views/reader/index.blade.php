@@ -1,8 +1,10 @@
 @extends('layouts.reader')
 @section('title', 'ByteInsider: Home ')
-@section('description','Homepage of Byteinsider')
+@section('description','Byte Insider is devoted to transforming complex tech concepts into digestible insights, enabling our readers to harness the power of technology to enhance their daily lives. We aim to be a guiding light in the digital landscape, providing reliable and practical advice, tips, and reviews.')
 @section('content')
-<h1 class="h2">Home</h1>
+<header class="listing-header">
+    <h1 class="h2">Home</h1>
+</header>
     <div class="masonry-wrap">
         <div class="masonry">
             <div class="grid-sizer"></div>
